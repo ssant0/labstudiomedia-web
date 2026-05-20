@@ -170,3 +170,7 @@ Both layouts include GTM head/body snippets automatically.
 - The `Show` helper component is the preferred way to conditionally render blocks
 - For new landing pages, follow the section pattern in `tarjetas-nfc.astro`: hero → benefits → use cases → CTA
 - AOS animations: use `data-aos="fade-up"` for cards/content, `data-aos="fade-in"` for decorative elements; stagger siblings with `data-aos-delay` in 50ms increments
+
+## NFC copy conventions
+
+- **LabStudio configures, not the client.** All copy in `tarjetas-nfc.astro` must frame configuration/setup actions as something LabStudio does, never the client. Use "Nosotros configuramos tu tarjeta para que…" or "La configuramos para que…". Never write imperative sentences like "Configura tu tarjeta" or "Enlaza la tarjeta" that imply the client sets things up themselves.
