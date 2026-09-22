@@ -47,7 +47,7 @@ Pendientes clave:
 - Impacto: Medio — rompe el nesting de la tarjeta "Branding" (render, accesibilidad, parseo del crawler)
 
 ### 4. Corregir enlace de WhatsApp roto en el Footer
-- [ ] `src/components/shared/Footer.astro:168` — `https://wa.me/6681057964` → `https://wa.me/526681057964` (falta código de país 52)
+- [x] `src/components/shared/Footer.astro:168` — `https://wa.me/6681057964` → `https://wa.me/526681057964` (falta código de país 52)
 - Impacto: Medio — CTA roto en todas las páginas + NAP inconsistente
 
 ---
