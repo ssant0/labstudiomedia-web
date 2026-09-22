@@ -2,8 +2,10 @@
   "name": "astrolabstudio",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@12.4.2",
   "engines": {
-    "node": "22.x"
+    "node": "24.x",
+    "pnpm": ">=10"
   },
   "scripts": {
     "dev": "astro dev",
@@ -14,8 +16,8 @@
   },
   "dependencies": {
     "@astrojs/partytown": "2.1.7",
-    "@astrojs/sitemap": "^3.7.3",
-    "astro": "7.2.8",
-    "sharp": "^0.34.5"
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "7.3.3",
+    "sharp": "^0.35.4"
   }
 }

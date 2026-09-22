@@ -1,9 +1,9 @@
 # 🖥️ LabStudio Media — Website
 
-> Corporate website for **LabStudio Media**, a digital solutions agency based in Los Mochis, Sinaloa. Built with Astro v6 as a fully static site, content in Spanish.
+> Corporate website for **LabStudio Media**, a digital solutions agency based in Los Mochis, Sinaloa. Built with Astro v7 as a fully static site, content in Spanish.
 
-![Astro](https://img.shields.io/badge/Astro-6.4.4-BC52EE?logo=astro&logoColor=white)
-![Node](https://img.shields.io/badge/Node-22.x-339933?logo=node.js&logoColor=white)
+![Astro](https://img.shields.io/badge/Astro-7.3.3-BC52EE?logo=astro&logoColor=white)
+![Node](https://img.shields.io/badge/Node-24.x-339933?logo=node.js&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.2.3-7952B3?logo=bootstrap&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)
 
@@ -30,7 +30,7 @@ LabStudio Media's website serves as the main digital presence for the agency, sh
 
 ## Tech Stack
 
-- **[Astro v6](https://astro.build)** — Static site framework (SSG)
+- **[Astro v7](https://astro.build)** — Static site framework (SSG)
 - **Bootstrap 5.2.3** — Layout and utility classes (extended spacing scale)
 - **TypeScript** — Type-safe components and interfaces
 - **[AOS](https://michalsnik.github.io/aos/)** — Scroll-triggered animations
@@ -44,8 +44,8 @@ LabStudio Media's website serves as the main digital presence for the agency, sh
 
 | Tool | Version |
 |------|---------|
-| Node.js | `22.x` |
-| pnpm | `>= 9` |
+| Node.js | `24.x` |
+| pnpm | `>= 10` |
 
 > [!NOTE]
 > The project uses **pnpm** as the package manager. Install it with `npm install -g pnpm` if you don't have it.
