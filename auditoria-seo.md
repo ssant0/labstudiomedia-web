@@ -131,9 +131,10 @@ Pendientes clave:
 - [x] Servir variante ~300px con `<Image width={300}>`
 
 ### 18. Headers de seguridad y caché
-- [ ] Agregar `Strict-Transport-Security`
-- [ ] Cache-Control inmutable de larga duración para `/_astro/*`
-- [ ] `X-Frame-Options`, `Content-Security-Policy`, `Referrer-Policy` en el hosting
+- [x] Agregar `Strict-Transport-Security`
+- [x] Cache-Control inmutable de larga duración para `/_astro/*`
+- [x] `X-Frame-Options`, `Referrer-Policy` (más `X-Content-Type-Options` y `Permissions-Policy`) vía `public/_headers` (Cloudflare Pages)
+- [ ] `Content-Security-Policy` — omitida por decisión: se deja fuera para no romper GTM/Maps/Partytown
 
 ### 19. 404
 - [ ] `SubPageLayout` fija `robots=index`; la página 404 devuelve status 404 (correcto), considerar `noindex` explícito para esa ruta
