@@ -42,4 +42,12 @@ Static marketing site for LabStudio Media, a digital solutions agency (Los Mochi
 - Sitemap is auto-generated at build, `/links` excluded via `astro.config.mjs`. Never edit `public/sitemap.xml` manually.
 - GTM is injected by `Gtm.astro` / `GtmBody.astro`; do not add GTM snippets by hand.
 - WhatsApp CTA `https://wa.me/526681057964`; Maps pin lat `25.8055853`, lng `-108.9964254`, mapId `ebec91dda5c2b1c2`.
-- No physical location → use `Organization` schema, not `LocalBusiness`. `seo_todo.md` is the living SEO audit checklist.
+- No physical location → use `Organization` schema, not `LocalBusiness`. `auditoria-seo.md` is the living SEO audit checklist.
+
+## Pendientes conocidos (retomar próxima sesión)
+
+Errores de tipos preexistentes reportados por el LSP. No bloquean `pnpm build`, pero deben corregirse puntualmente:
+
+- [ ] `src/pages/desarrollo-web.astro:361,380,401,435` — se pasa `price={null}` a `PricingCard`, cuyo prop `image` espera `ImageMetadata`. Ajustar el tipo del prop a `ImageMetadata | null` (y el render interno ya contempla `null`).
+- [ ] `src/components/shared/Footer.astro:29` — `<Image height="auto">` no es asignable a `number | \`${number}\``. Usar una altura numérica o quitar el atributo.
+- [ ] `src/components/blog/BlogEntryCard.astro:44` — `image` es opcional (`ImageMetadata | undefined`) pero `<Image>` exige valor definido. Renderizar condicionalmente (`<Show show={!!image}>`) o tipar el prop como requerido.
