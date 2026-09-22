@@ -39,7 +39,7 @@ Static marketing site for LabStudio Media, a digital solutions agency (Los Mochi
 
 - Nav order: Inicio · Desarrollo Web · Tarjetas NFC · Nosotros · Blog. Links use `data-astro-reload` + staggered `data-aos-delay` (50ms steps); active link gets `text-labs-gradient` via inline script. Footer "Compañía" mirrors Nav.
 - `Footer.astro` requires `useMap: boolean` — pass `false` on map-less pages.
-- Sitemap is auto-generated at build, `/links` excluded via `astro.config.mjs`. Never edit `public/sitemap.xml` manually.
+- Sitemap is auto-generated at build, `/links` excluded via `astro.config.mjs`. Never edit `public/sitemap.xml` manually. Hosting is **Cloudflare Pages** (`public/_redirects`, `public/_headers`); `robots.txt` points to `/sitemap-index.xml` and `/sitemap.xml` 301s there via `_redirects`.
 - GTM is injected by `Gtm.astro` / `GtmBody.astro`; do not add GTM snippets by hand.
 - WhatsApp CTA `https://wa.me/526681057964`; Maps pin lat `25.8055853`, lng `-108.9964254`, mapId `ebec91dda5c2b1c2`.
 - No physical location → use `Organization` schema, not `LocalBusiness`. `auditoria-seo.md` is the living SEO audit checklist.
