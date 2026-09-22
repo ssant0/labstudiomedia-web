@@ -42,8 +42,8 @@ Pendientes clave:
 - Impacto: **Alto** — toda página compartida previsualiza el homepage
 
 ### 3. Corregir HTML inválido en el homepage
-- [ ] `src/pages/index.astro:99` — `<di class="service-card">` → `<div class="service-card">`
-- [ ] `src/pages/index.astro:107` — `</di>` → `</div>`
+- [x] `src/pages/index.astro:99` — `<di class="service-card">` → `<div class="service-card">`
+- [x] `src/pages/index.astro:107` — `</di>` → `</div>`
 - Impacto: Medio — rompe el nesting de la tarjeta "Branding" (render, accesibilidad, parseo del crawler)
 
 ### 4. Corregir enlace de WhatsApp roto en el Footer
