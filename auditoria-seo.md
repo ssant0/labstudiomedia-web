@@ -137,7 +137,7 @@ Pendientes clave:
 - [ ] `Content-Security-Policy` — omitida por decisión: se deja fuera para no romper GTM/Maps/Partytown
 
 ### 19. 404
-- [ ] `SubPageLayout` fija `robots=index`; la página 404 devuelve status 404 (correcto), considerar `noindex` explícito para esa ruta
+- [x] `SubPageLayout` fija `robots=index`; la página 404 devuelve status 404 (correcto), considerar `noindex` explícito para esa ruta
 
 ---
 
