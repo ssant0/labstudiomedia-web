@@ -37,7 +37,7 @@ Static marketing site for LabStudio Media, a digital solutions agency (Los Mochi
 
 ## Nav, Footer, integrations
 
-- Nav order: Inicio · Desarrollo Web · Tarjetas NFC · Blog. Links use `data-astro-reload` + staggered `data-aos-delay` (50ms steps); active link gets `text-labs-gradient` via inline script. Footer "Enlaces" mirrors Nav.
+- Nav order: Inicio · Desarrollo Web · Tarjetas NFC · Nosotros · Blog. Links use `data-astro-reload` + staggered `data-aos-delay` (50ms steps); active link gets `text-labs-gradient` via inline script. Footer "Compañía" mirrors Nav.
 - `Footer.astro` requires `useMap: boolean` — pass `false` on map-less pages.
 - Sitemap is auto-generated at build, `/links` excluded via `astro.config.mjs`. Never edit `public/sitemap.xml` manually.
 - GTM is injected by `Gtm.astro` / `GtmBody.astro`; do not add GTM snippets by hand.
@@ -49,5 +49,4 @@ Static marketing site for LabStudio Media, a digital solutions agency (Los Mochi
 Errores de tipos preexistentes reportados por el LSP. No bloquean `pnpm build`, pero deben corregirse puntualmente:
 
 - [ ] `src/pages/desarrollo-web.astro:361,380,401,435` — se pasa `price={null}` a `PricingCard`, cuyo prop `image` espera `ImageMetadata`. Ajustar el tipo del prop a `ImageMetadata | null` (y el render interno ya contempla `null`).
-- [ ] `src/components/shared/Footer.astro:29` — `<Image height="auto">` no es asignable a `number | \`${number}\``. Usar una altura numérica o quitar el atributo.
 - [ ] `src/components/blog/BlogEntryCard.astro:44` — `image` es opcional (`ImageMetadata | undefined`) pero `<Image>` exige valor definido. Renderizar condicionalmente (`<Show show={!!image}>`) o tipar el prop como requerido.
