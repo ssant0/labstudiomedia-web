@@ -120,11 +120,11 @@ Pendientes clave:
 ## Prioridad 4 — Quick wins / Bajo
 
 ### 16. Correcciones puntuales
-- [ ] `src/pages/index.astro:59` — typo "por que" → "porque"
+- [x] `src/pages/index.astro:59` — typo "por que" → "porque"
 - [x] Cambiar `name="og:author"` y `name="og:site_name"` por `property=`
-- [ ] Reducir meta keywords de 25+ términos a 8–10 enfocados (homepage y `desarrollo-web`)
-- [ ] Acortar meta description del homepage (~178 caracteres hoy)
-- [ ] Agregar `hreflang="es-mx"` autorreferencial (y opcional `x-default`)
+- [x] Reducir meta keywords de 25+ términos a 8–10 enfocados (homepage y `desarrollo-web`)
+- [x] Acortar meta description del homepage (~178 caracteres hoy)
+- [x] Agregar `hreflang="es-mx"` autorreferencial (y opcional `x-default`)
 
 ### 17. Logo sobredimensionado
 - [ ] Navbar sirve logo con `width="3229" height="865"` y CSS `width:200px`
