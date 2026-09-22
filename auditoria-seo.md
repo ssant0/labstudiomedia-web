@@ -63,9 +63,10 @@ Pendientes clave:
 - Impacto: **Alto** — sin clustering ni flujo de autoridad hacia páginas de servicio
 
 ### 6. Crear página `/sobre-nosotros`
-- [ ] Nueva ruta `src/pages/sobre-nosotros.astro`
-- [ ] Contenido: historia de la agencia, equipo y roles, años en operación, "Los Mochis, Sinaloa" en cuerpo visible
-- [ ] Agregar al Nav y al Footer
+- [x] Nueva ruta `src/pages/sobre-nosotros.astro`
+- [x] Contenido: historia de la agencia, equipo y roles, años en operación, "Los Mochis, Sinaloa" en cuerpo visible
+- [x] Agregar al Nav y al Footer
+- [x] JSON-LD `Organization` (con `PostalAddress` + `founder`) + `AboutPage` + `BreadcrumbList`
 - Impacto: Medio — brecha de E-E-A-T para negocio local
 
 ### 7. Performance de fuentes
@@ -150,6 +151,7 @@ Pendientes clave:
 - [ ] Corregir orden de columnas hero en mobile (H1 antes que la imagen)
 - [ ] Convertir logos de clientes en testimonios con nombre, industria y resultado
 - [ ] Evaluar página `/casos-de-exito` con 2–3 casos estructurados
+- [ ] `/sobre-nosotros`: agregar fotos reales del equipo (hoy usa monogramas de iniciales; los perfiles de LinkedIn ya están enlazados)
 
 ---
 
