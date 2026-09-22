@@ -41,6 +41,8 @@ const optimizedImage = blogImage ? await getImage({ src: blogImage }) : null;
 const imageUrl = optimizedImage
   ? `https://labstudiomedia.com${optimizedImage.src}`
   : 'https://labstudiomedia.com/pageView.webp';
+const imageWidth = optimizedImage ? optimizedImage.attributes.width : 1902;
+const imageHeight = optimizedImage ? optimizedImage.attributes.height : 1080;
 
 const blogPostingSchema = JSON.stringify({
   '@context': 'https://schema.org',
@@ -68,6 +70,12 @@ const blogPostingSchema = JSON.stringify({
   description={ description }
   ogDescription={ ogDescription }
   keywords={ keywords }
+  ogType="article"
+  ogImage={ imageUrl }
+  ogImageWidth={ imageWidth }
+  ogImageHeight={ imageHeight }
+  ogImageAlt={ 'Imagen sobre: ' + title }
+  publishedTime={ isoDate }
 >
   <script type="application/ld+json" slot="head" set:html={blogPostingSchema} />
   <Nav />

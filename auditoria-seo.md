@@ -33,11 +33,11 @@ Pendientes clave:
 - Impacto: **Alto** — Google no puede autodescubrir ninguna URL
 
 ### 2. Arreglar Open Graph / Twitter en subpáginas
-- [ ] `src/layouts/SubPageLayout.astro` — `og:url` dinámico: `https://labstudiomedia.com${Astro.url.pathname}` (hoy está fijo al homepage)
-- [ ] Agregar prop `ogType` (default `website`); pasar `article` desde `BlogEntry.astro` (hoy los posts emiten `og:type=website`)
-- [ ] `og:image` por página: usar la imagen real del post (hoy todas usan `pageView.webp`, e incluso difiere del `BlogPosting` schema)
-- [ ] Agregar `og:image:width` / `og:image:height` absolutos
-- [ ] Agregar Twitter Cards: `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image` (hoy **no existe ninguno**)
+- [x] `src/layouts/SubPageLayout.astro` — `og:url` dinámico: `https://labstudiomedia.com${Astro.url.pathname}` (hoy está fijo al homepage)
+- [x] Agregar prop `ogType` (default `website`); pasar `article` desde `BlogEntry.astro` (hoy los posts emiten `og:type=website`)
+- [x] `og:image` por página: usar la imagen real del post (hoy todas usan `pageView.webp`, e incluso difiere del `BlogPosting` schema)
+- [x] Agregar `og:image:width` / `og:image:height` absolutos
+- [x] Agregar Twitter Cards: `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image` (hoy **no existe ninguno**)
 - Evidencia: live `desarrollo-web/` y post del blog emiten `og:url content="https://labstudiomedia.com/"`
 - Impacto: **Alto** — toda página compartida previsualiza el homepage
 
@@ -121,7 +121,7 @@ Pendientes clave:
 
 ### 16. Correcciones puntuales
 - [ ] `src/pages/index.astro:59` — typo "por que" → "porque"
-- [ ] Cambiar `name="og:author"` y `name="og:site_name"` por `property=`
+- [x] Cambiar `name="og:author"` y `name="og:site_name"` por `property=`
 - [ ] Reducir meta keywords de 25+ términos a 8–10 enfocados (homepage y `desarrollo-web`)
 - [ ] Acortar meta description del homepage (~178 caracteres hoy)
 - [ ] Agregar `hreflang="es-mx"` autorreferencial (y opcional `x-default`)
