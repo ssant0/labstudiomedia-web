@@ -127,8 +127,8 @@ Pendientes clave:
 - [x] Agregar `hreflang="es-mx"` autorreferencial (y opcional `x-default`)
 
 ### 17. Logo sobredimensionado
-- [ ] Navbar sirve logo con `width="3229" height="865"` y CSS `width:200px`
-- [ ] Servir variante ~300px con `<Image width={300}>`
+- [x] Navbar sirve logo con `width="3229" height="865"` y CSS `width:200px`
+- [x] Servir variante ~300px con `<Image width={300}>`
 
 ### 18. Headers de seguridad y caché
 - [ ] Agregar `Strict-Transport-Security`
