@@ -4,7 +4,7 @@ Static marketing site for LabStudio Media, a digital solutions agency (Los Mochi
 
 ## Commands
 
-- Package manager is **pnpm 12** (`pnpm-lock.yaml`); Node **24.x** (pinned in `package.json` `engines`).
+- Package manager is **pnpm 12** (`pnpm-lock.yaml`); Node **24.x** (pinned in `package.json` `engines`, `.nvmrc` and `.node-version` so Cloudflare Pages matches local).
 - `pnpm dev` → http://localhost:4321 · `pnpm build` → `dist/` · `pnpm preview`
 - There are **no test, lint, typecheck, or format scripts**, and `@astrojs/check` is not installed. Do not invent them — `pnpm build` is the only verification step.
 
