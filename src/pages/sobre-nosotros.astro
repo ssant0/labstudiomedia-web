@@ -1,0 +1,966 @@
+---
+import SubPageLayout from "../layouts/SubPageLayout.astro";
+import Footer from "../components/shared/Footer.astro";
+import Nav from "../components/shared/Nav.astro";
+import WhatsApp from "../components/shared/WhatsApp.astro";
+import CustomBtn from "../components/shared/CustomBtn.astro";
+
+const stats = [
+  { value: "+6", label: "Años en operación" },
+  { value: "+22", label: "Proyectos entregados" },
+  { value: "2", label: "Co-fundadores" },
+  { value: "LMO", label: "Los Mochis, Sinaloa" },
+];
+
+const valores = [
+  {
+    title: "Creatividad con propósito",
+    text: "Cada decisión de diseño busca un objetivo de negocio, no solo verse bien.",
+  },
+  {
+    title: "Claridad antes que ruido",
+    text: "Preferimos que tu mensaje se entienda a la primera en lugar de saturar.",
+  },
+  {
+    title: "Cercanía y trato directo",
+    text: "Hablas siempre con las personas que construyen tu proyecto, sin intermediarios.",
+  },
+  {
+    title: "Compromiso con resultados",
+    text: "Medimos nuestro trabajo por la presencia digital que logras, no por entregables.",
+  },
+];
+
+const soluciones = [
+  {
+    icon: "🌐",
+    title: "Desarrollo Web",
+    text: "Sitios web, landing pages y tiendas en línea rápidas, responsivas y optimizadas para aparecer en Google.",
+    href: "/desarrollo-web",
+    cta: "Ver desarrollo web",
+  },
+  {
+    icon: "📇",
+    title: "Tarjetas NFC Link It",
+    text: "Tarjetas de presentación inteligentes que comparten todo tu contacto con un solo toque.",
+    href: "/tarjetas-nfc",
+    cta: "Ver tarjetas NFC",
+  },
+  {
+    icon: "🎨",
+    title: "Branding y Diseño",
+    text: "Identidad visual, logotipos y piezas gráficas que dan personalidad y coherencia a tu marca.",
+    href: "https://wa.me/526681057964?text=Hola%20LabStudio%2C%20me%20interesa%20el%20servicio%20de%20Branding.",
+    cta: "Cotizar branding",
+  },
+  {
+    icon: "📈",
+    title: "Presencia Digital",
+    text: "Configuración de Google My Business, WhatsApp Business y redes para que te encuentren fácil.",
+    href: "https://wa.me/526681057964?text=Hola%20LabStudio%2C%20me%20interesa%20mejorar%20mi%20presencia%20digital.",
+    cta: "Cotizar presencia",
+  },
+];
+
+const equipo = [
+  {
+    initials: "IF",
+    name: "Ivan Mauricio Franco Perez",
+    role: "Co-Fundador · Director Creativo y Diseño",
+    bio: "Define la identidad visual y la dirección creativa de cada proyecto, cuidando que cada marca comunique con personalidad y claridad.",
+    linkedin: "https://www.linkedin.com/in/ivan-franco-5a9b07334/",
+  },
+  {
+    initials: "MS",
+    name: "Manuel Samaniego",
+    role: "Co-Fundador · Desarrollo Web",
+    bio: "Traduce las ideas en sitios rápidos, funcionales y bien posicionados, a cargo de la arquitectura técnica y la experiencia de usuario.",
+    linkedin: "https://www.linkedin.com/in/manuel-samaniego/",
+  },
+];
+
+const industrias = [
+  "Inmobiliario",
+  "Retail",
+  "Educativo",
+  "Eventos",
+];
+
+const proceso = [
+  {
+    step: "01",
+    title: "Escuchamos",
+    text: "Conocemos tu negocio, tu público y el objetivo real detrás del proyecto.",
+  },
+  {
+    step: "02",
+    title: "Proponemos",
+    text: "Definimos la solución, el alcance, el presupuesto y los tiempos de entrega.",
+  },
+  {
+    step: "03",
+    title: "Diseñamos y construimos",
+    text: "Desarrollamos la identidad, el sitio o las tarjetas con revisiones contigo en el camino.",
+  },
+  {
+    step: "04",
+    title: "Lanzamos y acompañamos",
+    text: "Publicamos tu proyecto y te damos soporte para mantenerlo actualizado.",
+  },
+];
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://labstudiomedia.com/#organization",
+      name: "LabStudio Media",
+      url: "https://labstudiomedia.com",
+      logo: "https://labstudiomedia.com/favicon/144x144.png",
+      foundingDate: "2020",
+      foundingLocation: {
+        "@type": "Place",
+        name: "Los Mochis, Sinaloa, México",
+      },
+      founder: [
+        {
+          "@type": "Person",
+          name: "Ivan Mauricio Franco Perez",
+          jobTitle: "Co-Fundador · Director Creativo y Diseño",
+          sameAs: "https://www.linkedin.com/in/ivan-franco-5a9b07334/",
+        },
+        {
+          "@type": "Person",
+          name: "Manuel Samaniego",
+          jobTitle: "Co-Fundador · Desarrollo Web",
+          sameAs: "https://www.linkedin.com/in/manuel-samaniego/",
+        },
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Los Mochis",
+        addressRegion: "Sinaloa",
+        addressCountry: "MX",
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "México",
+      },
+      knowsAbout: [
+        "Desarrollo web",
+        "Diseño web",
+        "Branding",
+        "Tarjetas NFC",
+        "Soluciones digitales",
+      ],
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://labstudiomedia.com/sobre-nosotros#about",
+      url: "https://labstudiomedia.com/sobre-nosotros",
+      name: "Sobre Nosotros | LabStudio Media",
+      description:
+        "Conoce la historia, el equipo y los valores de LabStudio Media, estudio de soluciones digitales en Los Mochis, Sinaloa.",
+      inLanguage: "es-MX",
+      about: { "@id": "https://labstudiomedia.com/#organization" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Inicio",
+          item: "https://labstudiomedia.com/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Sobre Nosotros",
+          item: "https://labstudiomedia.com/sobre-nosotros",
+        },
+      ],
+    },
+  ],
+});
+---
+
+<SubPageLayout
+  title="LABSTUDIO | Sobre Nosotros — Soluciones Digitales en Los Mochis, Sinaloa"
+  ogTitle="LABSTUDIO | Sobre Nosotros — Estudio de Soluciones Digitales"
+  description="Conoce a LabStudio Media: estudio de soluciones digitales en Los Mochis, Sinaloa. Somos un equipo de dos co-fundadores con más de 6 años y 22 proyectos creando presencia digital para negocios."
+  ogDescription="Desde 2020 ayudamos a marcas y negocios de Los Mochis, Sinaloa a mostrarse con claridad en internet. Conoce nuestra historia, equipo y valores."
+  keywords="sobre LabStudio Media, quiénes somos, agencia de soluciones digitales Los Mochis, estudio digital Sinaloa, equipo LabStudio, agencia web Los Mochis, historia LabStudio Media, desarrollo web Sinaloa, tarjetas NFC México"
+>
+  <script type="application/ld+json" slot="head" set:html={schemaJson} />
+  <Nav />
+
+  <!-- ===== HERO ===== -->
+  <section class="sn-hero position-relative overflow-hidden">
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row">
+        <div class="col-12 col-lg-9 col-xl-8" data-aos="fade-up">
+          <span class="sn-eyebrow purple-eyebrow-text fw-semibold text-uppercase">
+            Nosotros · Soluciones Digitales · Los Mochis, Sinaloa
+          </span>
+          <h1 class="sn-hero-title fw-bold mt-3 mb-4">
+            Un estudio digital que pone
+            <span class="text-labs-gradient"> tu marca a la vista </span>
+            de todos
+          </h1>
+          <p class="sn-hero-sub text-body-secondary mb-5">
+            Somos un equipo creativo con base en <strong>Los Mochis, Sinaloa</strong>,
+            que desde <strong>2020</strong> ayuda a negocios y marcas a mostrarse con
+            claridad en internet y redes sociales.
+          </p>
+          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+            <CustomBtn
+              isPrimary={true}
+              extraClasses="hero-btn-font-fix px-4 py-3"
+              href="https://wa.me/526681057964?text=Hola%20LabStudio%2C%20quiero%20hablar%20sobre%20mi%20proyecto."
+              blank={true}
+            >
+              Hablemos de tu proyecto
+            </CustomBtn>
+            <CustomBtn
+              isPrimary={false}
+              extraClasses="hero-btn-font-fix px-4 py-3"
+              href="#servicios"
+            >
+              Ver lo que hacemos
+            </CustomBtn>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="sn-stats row g-0 mt-9" data-aos="fade-up" data-aos-delay="100">
+        {stats.map(({ value, label }, i) => (
+          <div class="col-6 col-md-3 sn-stat">
+            <span class="sn-stat-value fw-bold">{value}</span>
+            <span class="sn-stat-label text-body-secondary">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="position-absolute sn-orb sn-orb-1" data-aos="fade-in" data-aos-duration="600">
+      <div class="radial-purple-sn" style="width: 30rem; height: 30rem;"></div>
+    </div>
+    <div class="position-absolute sn-orb sn-orb-2" data-aos="fade-in" data-aos-duration="600">
+      <div class="radial-purple-sn" style="width: 24rem; height: 24rem;"></div>
+    </div>
+  </section>
+  <!-- /Hero -->
+
+  <!-- ===== HISTORIA ===== -->
+  <section class="sn-historia py-12">
+    <div class="container">
+      <div class="row g-5 g-lg-8 align-items-start">
+        <div class="col-12 col-lg-5" data-aos="fade-right">
+          <h6 class="text-uppercase purple-eyebrow-text fw-bold mb-3">Nuestra historia</h6>
+          <h2 class="display-5 fw-bold mb-5">
+            Nacimos en 2020 para resolver un problema real
+          </h2>
+          <blockquote class="sn-quote mb-0">
+            Si tu marca no se ve, no existe. Nuestro trabajo es que se vea y se
+            entienda.
+          </blockquote>
+        </div>
+
+        <div class="col-12 col-lg-7" data-aos="fade-up" data-aos-delay="100">
+          <p class="sn-lead text-body-secondary mb-4">
+            <strong>LabStudio Media</strong> nació en <strong>2020</strong> en
+            <strong>Los Mochis, Sinaloa</strong>, después de notar una dificultad
+            clara: marcas y empresas con productos y servicios valiosos que no
+            lograban mostrarse bien en línea ni en redes sociales.
+          </p>
+          <p class="text-body-secondary fs-5 mb-4">
+            Decidimos convertir ese problema en nuestro oficio. Empezamos
+            combinando <strong>ideas, herramientas y servicios</strong> de diseño y
+            desarrollo para darle a cada negocio una presencia digital a su
+            medida, sin plantillas genéricas ni promesas vacías.
+          </p>
+          <p class="text-body-secondary fs-5 mb-8">
+            Hoy, más de <strong>22 proyectos</strong> después, seguimos con la misma
+            convicción del primer día: la tecnología y el diseño deben hacer que tu
+            negocio se vea mejor y se entienda más rápido.
+          </p>
+
+          <div class="sn-timeline">
+            <div class="sn-timeline-item">
+              <span class="sn-timeline-dot"></span>
+              <div>
+                <span class="sn-timeline-year">2020</span>
+                <p class="mb-0 text-body-secondary">
+                  Fundación en Los Mochis, Sinaloa, con la misión de resolver la
+                  presencia digital de las marcas locales.
+                </p>
+              </div>
+            </div>
+            <div class="sn-timeline-item">
+              <span class="sn-timeline-dot"></span>
+              <div>
+                <span class="sn-timeline-year">+22 proyectos</span>
+                <p class="mb-0 text-body-secondary">
+                  Sitios web, identidades y tarjetas NFC entregadas para negocios
+                  de distintos giros.
+                </p>
+              </div>
+            </div>
+            <div class="sn-timeline-item">
+              <span class="sn-timeline-dot"></span>
+              <div>
+                <span class="sn-timeline-year">Hoy</span>
+                <p class="mb-0 text-body-secondary">
+                  6 años de experiencia acompañando el crecimiento digital de
+                  empresas y emprendedores.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Historia -->
+
+  <!-- ===== MISIÓN / VISIÓN / VALORES ===== -->
+  <section class="sn-manifiesto py-12">
+    <div class="container">
+      <div class="row justify-content-center mb-8">
+        <div class="col-12 col-md-10 col-lg-8 text-center" data-aos="fade-up">
+          <h6 class="text-uppercase purple-eyebrow-text fw-bold mb-3">Lo que nos mueve</h6>
+          <h2 class="display-5 fw-bold">Misión, visión y valores</h2>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="50">
+          <div class="sn-manifesto-card h-100 p-5">
+            <span class="sn-manifesto-tag">Misión</span>
+            <p class="fs-5 mb-0">
+              Ayudar a negocios y marcas a mostrarse con claridad en el mundo
+              digital mediante ideas, diseño y desarrollo que generan resultados
+              reales.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="sn-manifesto-card sn-manifesto-card--dark h-100 p-5">
+            <span class="sn-manifesto-tag">Visión</span>
+            <p class="fs-5 mb-0">
+              Ser el estudio digital de referencia del noroeste de México,
+              reconocido por la calidad de su trabajo y la cercanía con sus
+              clientes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        {valores.map(({ title, text }, i) => (
+          <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay={50 * i}>
+            <div class="sn-value h-100 p-4">
+              <span class="sn-value-num fw-bold">{String(i + 1).padStart(2, "0")}</span>
+              <h3 class="h6 fw-bold mt-3 mb-2">{title}</h3>
+              <p class="text-body-secondary mb-0">{text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <!-- /Manifiesto -->
+
+  <!-- ===== SERVICIOS ===== -->
+  <section id="servicios" class="sn-servicios py-12">
+    <div class="container">
+      <div class="row justify-content-center mb-8">
+        <div class="col-12 col-md-10 col-lg-8 text-center" data-aos="fade-up">
+          <h6 class="text-uppercase purple-eyebrow-text fw-bold mb-3">Qué hacemos</h6>
+          <h2 class="display-5 fw-bold mb-3">Soluciones digitales para tu negocio</h2>
+          <p class="text-body-secondary fs-5 mb-0">
+            Reunimos todo lo que una marca necesita para existir y destacar en
+            línea, en un solo equipo.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        {soluciones.map(({ icon, title, text, href, cta }, i) => (
+          <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay={50 * i}>
+            <a class="sn-solucion h-100 p-5 text-decoration-none" href={href} target={href.startsWith("http") ? "_blank" : "_self"}>
+              <span class="sn-solucion-icon">{icon}</span>
+              <h3 class="h5 fw-bold mt-4 mb-2">{title}</h3>
+              <p class="text-body-secondary mb-4">{text}</p>
+              <span class="sn-solucion-cta lab-font-color fw-semibold">{cta} →</span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <!-- /Servicios -->
+
+  <!-- ===== EQUIPO ===== -->
+  <section class="sn-equipo py-12">
+    <div class="container">
+      <div class="row justify-content-center mb-8">
+        <div class="col-12 col-md-10 col-lg-8 text-center" data-aos="fade-up">
+          <h6 class="text-uppercase purple-eyebrow-text fw-bold mb-3">El equipo</h6>
+          <h2 class="display-5 fw-bold mb-3">Dos co-fundadores, un mismo objetivo</h2>
+          <p class="text-body-secondary fs-5 mb-0">
+            Un equipo pequeño y directo: hablas siempre con quienes construyen tu
+            proyecto.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        {equipo.map(({ initials, name, role, bio, linkedin }, i) => (
+          <div class="col-12 col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay={100 * i}>
+            <div class="sn-member h-100 p-5">
+              <div class="sn-member-avatar" aria-hidden="true">{initials}</div>
+              <h3 class="h5 fw-bold mt-4 mb-1">{name}</h3>
+              <p class="sn-member-role mb-3">{role}</p>
+              <p class="text-body-secondary mb-4">{bio}</p>
+              <a
+                class="sn-member-linkedin"
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Perfil de LinkedIn de ${name}`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.633 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"></path>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Industrias -->
+      <div class="sn-industrias mt-9" data-aos="fade-up">
+        <p class="sn-industrias-label text-body-secondary text-center mb-4">
+          Industrias que hemos atendido
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          {industrias.map((industria) => (
+            <span class="sn-industria-pill">{industria}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Equipo -->
+
+  <!-- ===== PROCESO ===== -->
+  <section class="sn-proceso py-12">
+    <div class="container">
+      <div class="row justify-content-center mb-8">
+        <div class="col-12 col-md-10 col-lg-8 text-center" data-aos="fade-up">
+          <h6 class="text-uppercase purple-eyebrow-text fw-bold mb-3">Cómo trabajamos</h6>
+          <h2 class="display-5 fw-bold">Un proceso claro de principio a fin</h2>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        {proceso.map(({ step, title, text }, i) => (
+          <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay={50 * i}>
+            <div class="sn-step h-100">
+              <span class="sn-step-num fw-bold">{step}</span>
+              <h3 class="h5 fw-bold mt-3 mb-2">{title}</h3>
+              <p class="text-body-secondary mb-0">{text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <!-- /Proceso -->
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="sn-final-cta d-flex justify-content-center align-items-center flex-column w-100 position-relative overflow-hidden">
+    <div class="container text-center position-relative" style="z-index: 2;">
+      <h2 class="display-4 fw-bold mb-3" data-aos="fade-up">
+        ¿Construimos juntos tu
+        <span class="text-labs-gradient">presencia digital</span>?
+      </h2>
+      <p class="text-body-secondary fs-5 mb-6" data-aos="fade-up" data-aos-delay="80">
+        Cuéntanos sobre tu negocio y te propondremos una solución a tu medida,
+        desde Los Mochis, Sinaloa para todo México.
+      </p>
+      <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <CustomBtn
+          isPrimary={true}
+          extraClasses="hero-btn-font-fix px-5 py-3"
+          href="https://wa.me/526681057964?text=Hola%20LabStudio%2C%20quiero%20una%20propuesta%20para%20mi%20proyecto."
+          blank={true}
+        >
+          Escríbenos por WhatsApp
+        </CustomBtn>
+        <CustomBtn
+          isPrimary={false}
+          extraClasses="hero-btn-font-fix px-5 py-3"
+          href="mailto:contacto@labstudiomedia.com"
+        >
+          contacto@labstudiomedia.com
+        </CustomBtn>
+      </div>
+    </div>
+
+    <div class="position-absolute sn-orb sn-orb-3" data-aos="fade-in" data-aos-duration="600">
+      <div class="radial-purple-sn" style="width: 28rem; height: 28rem;"></div>
+    </div>
+    <div class="position-absolute sn-orb sn-orb-4" data-aos="fade-in" data-aos-duration="600">
+      <div class="radial-purple-sn" style="width: 24rem; height: 24rem;"></div>
+    </div>
+  </section>
+  <!-- /CTA final -->
+
+  <div class="position-relative" style="z-index: 11;">
+    <Footer useMap={false} />
+  </div>
+
+  <WhatsApp />
+
+  <style>
+    /* ===== HERO ===== */
+    .sn-hero {
+      min-height: calc(100vh - 111px);
+      padding: 5rem 1.5rem 4rem;
+      z-index: 10;
+    }
+
+    .sn-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      line-height: 1.6;
+    }
+
+    .sn-hero-title {
+      font-size: 3.3rem;
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+    }
+
+    .sn-hero-sub {
+      font-size: 1.15rem;
+      max-width: 520px;
+    }
+
+    /* Stats */
+    .sn-stats {
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      padding-top: 2rem;
+    }
+
+    .sn-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 0.5rem 0;
+    }
+
+    .sn-stat + .sn-stat {
+      border-left: 1px solid rgba(0, 0, 0, 0.07);
+      padding-left: 1.5rem;
+    }
+
+    .sn-stat-value {
+      font-size: 2.2rem;
+      line-height: 1;
+      color: #633fb9;
+    }
+
+    .sn-stat-label {
+      font-size: 0.82rem;
+    }
+
+    /* Orbs */
+    .radial-purple-sn {
+      background: radial-gradient(
+        circle,
+        rgba(92, 33, 240, 0.5) 0%,
+        rgba(93, 32, 235, 0.28) 18%,
+        rgba(99, 27, 207, 0) 68%
+      );
+      border-radius: 50%;
+      filter: blur(24px);
+      opacity: 0.75;
+    }
+
+    .sn-orb {
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .sn-orb-1 {
+      left: -14rem;
+      top: 2rem;
+    }
+
+    .sn-orb-2 {
+      right: -12rem;
+      bottom: 8rem;
+    }
+
+    .sn-orb-3 {
+      left: -14rem;
+      top: 4rem;
+    }
+
+    .sn-orb-4 {
+      right: -12rem;
+      bottom: 0;
+    }
+
+    /* ===== HISTORIA ===== */
+    .sn-historia {
+      background: #fff;
+    }
+
+    .sn-quote {
+      position: relative;
+      padding: 1.5rem 0 0.5rem 1.75rem;
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: #1a1a2e;
+      border-left: 3px solid transparent;
+      border-image: linear-gradient(180deg, #9554fd, #633fb9) 1;
+    }
+
+    .sn-lead {
+      font-size: 1.2rem;
+      line-height: 1.65;
+    }
+
+    .sn-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .sn-timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg, #9554fd, rgba(99, 63, 185, 0.1));
+    }
+
+    .sn-timeline-item {
+      position: relative;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .sn-timeline-dot {
+      position: absolute;
+      left: -1.5rem;
+      top: 0.35rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid #9554fd;
+      box-shadow: 0 0 0 4px rgba(149, 84, 253, 0.12);
+    }
+
+    .sn-timeline-year {
+      display: block;
+      font-weight: 700;
+      color: #633fb9;
+      margin-bottom: 0.2rem;
+    }
+
+    /* ===== MANIFIESTO ===== */
+    .sn-manifiesto {
+      background: #fafafa;
+    }
+
+    .sn-manifesto-card {
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid rgba(99, 63, 185, 0.1);
+      box-shadow: 0 4px 24px rgba(99, 63, 185, 0.06);
+      color: #1a1a2e;
+    }
+
+    .sn-manifesto-card--dark {
+      background: linear-gradient(140deg, #2d1b6e 0%, #1a1a2e 100%);
+      border-color: transparent;
+      color: #f4f0ff;
+    }
+
+    .sn-manifesto-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9554fd;
+      margin-bottom: 1rem;
+    }
+
+    .sn-manifesto-card--dark .sn-manifesto-tag {
+      color: #c9b3ff;
+    }
+
+    .sn-value {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(99, 63, 185, 0.08);
+      transition:
+        transform 0.22s,
+        box-shadow 0.22s;
+    }
+
+    .sn-value:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(99, 63, 185, 0.12);
+    }
+
+    .sn-value-num {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1;
+      background: linear-gradient(82deg, #9554fd 0%, #7645ed 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ===== SERVICIOS ===== */
+    .sn-servicios {
+      background: #fff;
+    }
+
+    .sn-solucion {
+      display: flex;
+      flex-direction: column;
+      background: #fafafa;
+      border-radius: 20px;
+      border: 1px solid rgba(99, 63, 185, 0.08);
+      color: #1a1a2e;
+      transition:
+        transform 0.22s,
+        box-shadow 0.22s,
+        border-color 0.22s;
+    }
+
+    .sn-solucion:hover {
+      transform: translateY(-6px);
+      border-color: rgba(99, 63, 185, 0.22);
+      box-shadow: 0 16px 44px rgba(99, 63, 185, 0.12);
+    }
+
+    .sn-solucion-icon {
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 14px rgba(99, 63, 185, 0.1);
+    }
+
+    .sn-solucion-cta {
+      margin-top: auto;
+      transition: letter-spacing 0.2s;
+    }
+
+    .sn-solucion:hover .sn-solucion-cta {
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== EQUIPO ===== */
+    .sn-equipo {
+      background: #fafafa;
+    }
+
+    .sn-member {
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid rgba(99, 63, 185, 0.1);
+      box-shadow: 0 4px 24px rgba(99, 63, 185, 0.06);
+      transition:
+        transform 0.22s,
+        box-shadow 0.22s;
+    }
+
+    .sn-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 44px rgba(99, 63, 185, 0.13);
+    }
+
+    .sn-member-avatar {
+      width: 86px;
+      height: 86px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #fff;
+      background: linear-gradient(135deg, #9554fd 0%, #4e2fa8 100%);
+      box-shadow: 0 12px 30px rgba(99, 63, 185, 0.28);
+    }
+
+    .sn-member-role {
+      color: #9554fd;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .sn-member-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 6rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #633fb9;
+      background: #f5f0ff;
+      border: 1px solid rgba(99, 63, 185, 0.14);
+      text-decoration: none;
+      transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.2s;
+    }
+
+    .sn-member-linkedin svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .sn-member-linkedin:hover {
+      color: #fff;
+      background: linear-gradient(82deg, #9554fd 0%, #7645ed 100%);
+      transform: translateY(-2px);
+    }
+
+    .sn-industrias-label {
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .sn-industria-pill {
+      display: inline-block;
+      padding: 0.65rem 1.5rem;
+      border-radius: 6rem;
+      font-weight: 600;
+      color: #633fb9;
+      background: #fff;
+      border: 1px solid rgba(99, 63, 185, 0.18);
+      transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.2s;
+    }
+
+    .sn-industria-pill:hover {
+      background: linear-gradient(82deg, #9554fd 0%, #7645ed 100%);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ===== PROCESO ===== */
+    .sn-proceso {
+      background: #fff;
+    }
+
+    .sn-step {
+      position: relative;
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(99, 63, 185, 0.1);
+      background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+      overflow: hidden;
+    }
+
+    .sn-step-num {
+      display: block;
+      font-size: 2.6rem;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: transparent;
+      -webkit-text-stroke: 1.4px rgba(99, 63, 185, 0.35);
+    }
+
+    /* ===== CTA FINAL ===== */
+    .sn-final-cta {
+      min-height: 70vh;
+      padding: 5rem 1.5rem;
+      background: linear-gradient(160deg, #f8f5ff 0%, #fafafa 55%, #fff 100%);
+      z-index: 10;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media only screen and (max-width: 992px) {
+      .sn-hero-title {
+        font-size: 2.7rem;
+      }
+      .sn-hero-sub {
+        max-width: 100%;
+      }
+      .sn-stat + .sn-stat {
+        border-left: none;
+        padding-left: 0;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .sn-hero-title {
+        font-size: 2.3rem;
+      }
+      .sn-stat-value {
+        font-size: 1.9rem;
+      }
+      .sn-quote {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      .sn-hero {
+        padding: 3.5rem 1rem 3rem;
+      }
+      .sn-hero-title {
+        font-size: 2rem;
+      }
+      .sn-stat-value {
+        font-size: 1.6rem;
+      }
+      .sn-orb-1 {
+        left: -18rem;
+      }
+      .sn-orb-2 {
+        right: -16rem;
+      }
+    }
+  </style>
+</SubPageLayout>
