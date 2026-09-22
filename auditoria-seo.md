@@ -28,7 +28,7 @@ Pendientes clave:
 
 ### 1. Corregir URL del sitemap en `robots.txt` (REGRESIÓN)
 - [x] `public/robots.txt:4` — cambiar `https://labstudiomedia.com/sitemap.xml` por `https://labstudiomedia.com/sitemap-index.xml`
-- [ ] (Alternativa) agregar un 301/rewrite de `/sitemap.xml` → `/sitemap-index.xml` (pendiente: confirmar hosting)
+- [x] (Alternativa) agregar un 301/rewrite de `/sitemap.xml` → `/sitemap-index.xml` (Cloudflare Pages: `public/_redirects`)
 - Evidencia: `curl` → `/sitemap.xml` = **404**, `/sitemap-index.xml` = 200
 - Impacto: **Alto** — Google no puede autodescubrir ninguna URL
 
