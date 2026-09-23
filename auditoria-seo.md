@@ -84,7 +84,7 @@ Pendientes clave:
 - Impacto: **Alto**
 
 ### 9. Arreglar alt text de imágenes en blog
-- [ ] `src/components/blog/BlogEntry.astro:81` — reemplazar `alt="linea"` por patrón dinámico (`'Imagen sobre: ' + title`)
+- [x] `src/components/blog/BlogEntry.astro:81` — reemplazar `alt="linea"` por patrón dinámico (`'Imagen sobre: ' + title`)
 
 ### 10. Resolver canibalización de keywords
 - [ ] Homepage title compite con `/desarrollo-web` por "desarrollo web"
