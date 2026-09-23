@@ -148,8 +148,8 @@ Pendientes clave:
   - "agencia de desarrollo web Los Mochis"
   - "desarrollo web para negocios en Sinaloa"
   - "tarjetas NFC para negocios México"
-- [ ] Agregar `<lastmod>` al sitemap (opcional, Google lo usa poco pero ayuda)
-- [ ] Corregir orden de columnas hero en mobile (H1 antes que la imagen)
+- [x] Agregar `<lastmod>` al sitemap (opcional, Google lo usa poco pero ayuda)
+- [x] Corregir orden de columnas hero en mobile (H1 antes que la imagen)
 - [ ] Convertir logos de clientes en testimonios con nombre, industria y resultado
 - [ ] Evaluar página `/casos-de-exito` con 2–3 casos estructurados
 - [ ] `/sobre-nosotros`: agregar fotos reales del equipo (hoy usa monogramas de iniciales; los perfiles de LinkedIn ya están enlazados)
