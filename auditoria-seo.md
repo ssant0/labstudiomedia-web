@@ -96,7 +96,7 @@ Pendientes clave:
 ## Prioridad 3 — Medio
 
 ### 11. Fechas de blog con `<time datetime>`
-- [ ] `src/components/blog/BlogEntry.astro:78` — envolver la fecha en `<time datetime={isoDate}>{date}</time>` (la función `toISODate` ya existe, solo se usa en el schema)
+- [x] `src/components/blog/BlogEntry.astro:78` — envolver la fecha en `<time datetime={isoDate}>{date}</time>` (la función `toISODate` ya existe, solo se usa en el schema)
 
 ### 12. Corregir posicionamiento del index del blog
 - [ ] `src/pages/blog.astro:23-25` — reescribir title/description/keywords alrededor de **"Soluciones Digitales"** (hoy vende fotografía, video y drones como foco actual)

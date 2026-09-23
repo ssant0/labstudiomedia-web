@@ -83,7 +83,7 @@ const blogPostingSchema = JSON.stringify({
   <main class="w-100 d-flex flex-column justify-content-center align-items-center pb-11">
     <div class="blog-container">
       <h1 class="m-0">{ title }</h1>
-      <p class="text-gray-700 ms-1">Por <span>{ createdBy }</span> - <span>{ skill }</span> en <span class="lab-font-color">LABSTUDIO</span> • <span>{ date }</span></p>
+      <p class="text-gray-700 ms-1">Por <span>{ createdBy }</span> - <span>{ skill }</span> en <span class="lab-font-color">LABSTUDIO</span> • <time datetime={ isoDate }>{ date }</time></p>
 
       {
         blogImage && (<Image src={blogImage} alt={ 'Imagen sobre: ' + title } class="w-100 h-auto shadow rounded mt-4 mb-6" />)
