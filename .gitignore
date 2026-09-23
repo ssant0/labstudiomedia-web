@@ -19,5 +19,6 @@ dist/
 *.tmp
 *.log
 
-# Agent skills
+# Agent skills / plugins (heavy, keep local only)
 .agents/
+.opencode/
