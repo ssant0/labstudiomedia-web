@@ -15,6 +15,7 @@ interface Props {
   ogImageHeight?: number;
   ogImageAlt?: string;
   publishedTime?: string;
+  robots?: string;
 }
 
 const {
@@ -29,6 +30,7 @@ const {
   ogImageHeight = 1080,
   ogImageAlt = ogTitle,
   publishedTime,
+  robots = 'index',
 } = Astro.props;
 
 const canonicalUrl = `https://labstudiomedia.com${Astro.url.pathname}`;
@@ -41,9 +43,11 @@ const canonicalUrl = `https://labstudiomedia.com${Astro.url.pathname}`;
     <Maps />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="index" />
+    <meta name="robots" content={robots} />
     <title>{title}</title>
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es-mx" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
     <meta
       name="google-site-verification"
       content="O5K-700LvgkrdOo5Ir4cyfOGDaastTK5-TNAC-4utPo"

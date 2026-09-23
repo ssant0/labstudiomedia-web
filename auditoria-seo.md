@@ -120,23 +120,24 @@ Pendientes clave:
 ## Prioridad 4 — Quick wins / Bajo
 
 ### 16. Correcciones puntuales
-- [ ] `src/pages/index.astro:59` — typo "por que" → "porque"
+- [x] `src/pages/index.astro:59` — typo "por que" → "porque"
 - [x] Cambiar `name="og:author"` y `name="og:site_name"` por `property=`
-- [ ] Reducir meta keywords de 25+ términos a 8–10 enfocados (homepage y `desarrollo-web`)
-- [ ] Acortar meta description del homepage (~178 caracteres hoy)
-- [ ] Agregar `hreflang="es-mx"` autorreferencial (y opcional `x-default`)
+- [x] Reducir meta keywords de 25+ términos a 8–10 enfocados (homepage y `desarrollo-web`)
+- [x] Acortar meta description del homepage (~178 caracteres hoy)
+- [x] Agregar `hreflang="es-mx"` autorreferencial (y opcional `x-default`)
 
 ### 17. Logo sobredimensionado
-- [ ] Navbar sirve logo con `width="3229" height="865"` y CSS `width:200px`
-- [ ] Servir variante ~300px con `<Image width={300}>`
+- [x] Navbar sirve logo con `width="3229" height="865"` y CSS `width:200px`
+- [x] Servir variante ~300px con `<Image width={300}>`
 
 ### 18. Headers de seguridad y caché
-- [ ] Agregar `Strict-Transport-Security`
-- [ ] Cache-Control inmutable de larga duración para `/_astro/*`
-- [ ] `X-Frame-Options`, `Content-Security-Policy`, `Referrer-Policy` en el hosting
+- [x] Agregar `Strict-Transport-Security`
+- [x] Cache-Control inmutable de larga duración para `/_astro/*`
+- [x] `X-Frame-Options`, `Referrer-Policy` (más `X-Content-Type-Options` y `Permissions-Policy`) vía `public/_headers` (Cloudflare Pages)
+- [ ] `Content-Security-Policy` — omitida por decisión: se deja fuera para no romper GTM/Maps/Partytown
 
 ### 19. 404
-- [ ] `SubPageLayout` fija `robots=index`; la página 404 devuelve status 404 (correcto), considerar `noindex` explícito para esa ruta
+- [x] `SubPageLayout` fija `robots=index`; la página 404 devuelve status 404 (correcto), considerar `noindex` explícito para esa ruta
 
 ---
 
