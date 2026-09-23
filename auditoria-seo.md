@@ -87,9 +87,9 @@ Pendientes clave:
 - [x] `src/components/blog/BlogEntry.astro:81` — reemplazar `alt="linea"` por patrón dinámico (`'Imagen sobre: ' + title`)
 
 ### 10. Resolver canibalización de keywords
-- [ ] Homepage title compite con `/desarrollo-web` por "desarrollo web"
-- [ ] Acotar el title del homepage a marca + término local primario
-- [ ] Dejar los términos específicos de servicio solo en las páginas de servicio
+- [x] Homepage title compite con `/desarrollo-web` por "desarrollo web"
+- [x] Acotar el title del homepage a marca + término local primario
+- [x] Dejar los términos específicos de servicio solo en las páginas de servicio
 
 ---
 
