@@ -3,27 +3,30 @@ import BlogEntryCard from "../components/blog/BlogEntryCard.astro";
 import Footer from "../components/shared/Footer.astro";
 import Nav from "../components/shared/Nav.astro";
 import SubPageLayout from "../layouts/SubPageLayout.astro";
+import { blogPosts, slugify } from "../data/blogPosts";
 
-import Blog1Image from "../img/blog/1.webp";
-import Blog2Image from "../img/blog/2.webp";
-import Blog3Image from "../img/blog/3.webp";
-import Blog4Image from "../img/blog/4.webp";
-import Blog5Image from "../img/blog/5-1.webp";
-import Blog6Image from "../img/blog/6.webp";
-import Blog7Image from "../img/blog/7.webp";
-import Blog8Image from "../img/blog/8.webp";
-import Blog9Image from "../img/blog/9.webp";
-import Blog10Image from "../img/blog/10.webp";
-
+const itemListSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Blog de LabStudio Media",
+  itemListElement: blogPosts.map((post, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: `https://labstudiomedia.com/blog/${slugify(post.title)}`,
+    name: post.title,
+  })),
+});
 ---
 
 <SubPageLayout
-title="LABSTUDIO | Blog"
-ogTitle="LABSTUDIO | Blog"
-description="Bienvenido al blog de Labstudiomedia, donde compartimos noticias, consejos y tendencias sobre fotografía profesional, producción de video, desarrollo web y videos aéreos con dron. Nuestro enfoque centrado en el cliente y nuestra pasión por la creatividad nos distinguen. Descubre cómo puedes potenciar tu marca con nuestras soluciones creativas."
-ogDescription="Bienvenido al blog de Labstudiomedia, donde compartimos noticias, consejos y tendencias sobre fotografía profesional, producción de video, desarrollo web y videos aéreos con dron. Descubre cómo puedes potenciar tu marca con nuestras soluciones creativas en Los Mochis, Sinaloa."
-keywords="Blog de fotografía, Blog de video, Consejos de desarrollo web, Tendencias en soluciones digitales, Fotografía profesional, Producción de video, Desarrollo web, Videos aéreos, Fotografía en Los Mochis, Producción audiovisual en Sinaloa"
+title="LABSTUDIO | Blog de Soluciones Digitales para Negocios"
+ogTitle="LABSTUDIO | Blog de Soluciones Digitales"
+description="Ideas, consejos y tendencias sobre soluciones digitales para negocios: desarrollo web, diseño, branding y presencia digital. Aprende a hacer crecer tu marca en línea."
+ogDescription="Blog de LabStudio Media: artículos sobre desarrollo web, diseño, branding y presencia digital para negocios en Los Mochis, Sinaloa y todo México."
+keywords="blog soluciones digitales, desarrollo web, diseño web, branding, presencia digital, tarjetas NFC, consejos web para negocios, Los Mochis, Sinaloa"
+breadcrumbName="Blog"
 >
+  <script type="application/ld+json" slot="head" set:html={itemListSchema} />
   <Nav />
 
   <main class="w-100 d-flex flex-column align-items-center pb-12">
@@ -31,56 +34,13 @@ keywords="Blog de fotografía, Blog de video, Consejos de desarrollo web, Tenden
       <h1>Bienvenido a nuestro Blog: Innovación, Consejos y Estrategias de Soluciones Digitales</h1>
 
       <div class="d-flex flex-wrap pt-6 gap-control">
-        <BlogEntryCard
-          title="10 Motivos por los Cuales una Página Web es Importante para un Negocio"
-          description="Descubre por qué tener una página web es esencial para tu negocio. Aquí te presentamos 10 razones clave para mejorar tu presencia en línea y aumentar tus ventas."
-          image={Blog1Image}
-        />
-        <BlogEntryCard
-          title="La Importancia del Diseño Responsivo en la Era Móvil"
-          description="Descubre por qué el diseño responsivo es esencial en la era móvil. Aprende cómo un sitio web adaptable puede mejorar la experiencia del usuario y aumentar la conversión."
-          image={Blog2Image}
-        />
-        <BlogEntryCard
-          title="La Importancia de la Fotografía Profesional para tu Negocio"
-          description="Descubre cómo la fotografía profesional puede mejorar la imagen de tu negocio, atraer más clientes y aumentar tus ventas. Aprende sobre los beneficios y la importancia de invertir en fotos de alta calidad."
-          image={Blog3Image}
-        />
-        <BlogEntryCard
-          title="Elige el Dron Perfecto para tus Proyectos"
-          description="Descubre cómo elegir el dron perfecto para tus proyectos de grabación. Exploramos modelos como el DJI Mini 4, Air 3 y Mavic 3, con sus precios, funciones y características técnicas."
-          image={Blog4Image}
-        />
-        <BlogEntryCard
-          title="Tendencias de Diseño Web en 2024: Lo que Necesitas Saber"
-          description="Explora las principales tendencias de diseño web en 2024, desde la accesibilidad mejorada hasta el 3d. Mantente actualizado y asegura que tu sitio web destaque en el competitivo mercado digital."
-          image={Blog5Image}
-        />
-        <BlogEntryCard
-          title="10 Errores Comunes de Diseño Web y Cómo Evitarlos"
-          description="Descubre los 10 errores más comunes en diseño web y aprende cómo evitarlos para mejorar la experiencia de usuario y el rendimiento de tu sitio."
-          image={Blog6Image}
-        />
-        <BlogEntryCard
-          title="Post-producción en Fotografía de Productos: Retoca como un Profesional"
-          description="Descubre consejos y técnicas de edición para mejorar la calidad de las fotos de productos en postproducción. Aprende a retocar imágenes como un profesional y lleva tus fotografías al siguiente nivel."
-          image={Blog7Image}
-        />
-        <BlogEntryCard
-          title="Drones para Fotografía de Eventos: Capturando Momentos Únicos desde Nuevas Perspectivas"
-          description="Descubre cómo utilizar drones para capturar fotografías impresionantes en eventos como bodas, conciertos y deportes, ofreciendo perspectivas únicas que no son posibles con cámaras tradicionales."
-          image={Blog8Image}
-        />
-        <BlogEntryCard
-          title="Innovaciones en Tecnología de Drones: Lo Último en Cámaras y Estabilización para Video y Fotografía"
-          description="Explora las últimas innovaciones en tecnología de drones, centrándote en las mejoras de cámaras y sistemas de estabilización que están transformando la calidad del contenido en video y fotografía."
-          image={Blog9Image}
-        />
-        <BlogEntryCard
-          title="Cómo Incorporar Imágenes con Drones en Estrategias de Soluciones Digitales"
-          description="Descubre cómo integrar imágenes aéreas capturadas con drones en tus estrategias de soluciones digitales para crear contenido más atractivo y diferenciador en redes sociales, sitios web y presentaciones corporativas."
-          image={Blog10Image}
-        />
+        {blogPosts.map((post) => (
+          <BlogEntryCard
+            title={post.title}
+            description={post.description}
+            image={post.image}
+          />
+        ))}
       </div>
     </div>
   </main>

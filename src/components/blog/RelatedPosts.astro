@@ -1,0 +1,42 @@
+---
+import BlogEntryCard from "./BlogEntryCard.astro";
+import { blogPosts } from "../../data/blogPosts";
+
+interface Props {
+  currentTitle: string;
+}
+
+const { currentTitle } = Astro.props;
+
+const relatedPosts = blogPosts.filter((post) => post.title !== currentTitle).slice(0, 3);
+---
+
+{
+  relatedPosts.length > 0 && (
+    <section class="related-posts" data-aos="fade-up">
+      <h2 class="related-posts-title h4 fw-bold mb-4">Artículos relacionados</h2>
+      <div class="row g-4">
+        {relatedPosts.map((post) => (
+          <div class="col-12 col-md-4">
+            <BlogEntryCard
+              title={post.title}
+              description={post.description}
+              image={post.image}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .related-posts {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .related-posts-title {
+    color: #1a1a2e;
+  }
+</style>

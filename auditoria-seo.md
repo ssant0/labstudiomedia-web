@@ -56,9 +56,9 @@ Pendientes clave:
 
 ### 5. Expandir contenido del blog y crear enlaces internos
 - [ ] Expandir los 10 posts a **1,200–1,500 palabras** (hoy ~520) con ejemplos originales
-- [ ] Agregar 2–3 enlaces internos contextuales por post hacia `/desarrollo-web` y `/tarjetas-nfc`
-- [ ] Agregar bloque CTA de servicios al final de cada post
-- [ ] Agregar módulo de "posts relacionados"
+- [x] Agregar 2–3 enlaces internos contextuales por post hacia `/desarrollo-web` y `/tarjetas-nfc`
+- [x] Agregar bloque CTA de servicios al final de cada post
+- [x] Agregar módulo de "posts relacionados"
 - Evidencia: los 10 archivos en `src/pages/blog/*.astro` tienen `href=` count = **0**
 - Impacto: **Alto** — sin clustering ni flujo de autoridad hacia páginas de servicio
 
@@ -84,33 +84,33 @@ Pendientes clave:
 - Impacto: **Alto**
 
 ### 9. Arreglar alt text de imágenes en blog
-- [ ] `src/components/blog/BlogEntry.astro:81` — reemplazar `alt="linea"` por patrón dinámico (`'Imagen sobre: ' + title`)
+- [x] `src/components/blog/BlogEntry.astro:81` — reemplazar `alt="linea"` por patrón dinámico (`'Imagen sobre: ' + title`)
 
 ### 10. Resolver canibalización de keywords
-- [ ] Homepage title compite con `/desarrollo-web` por "desarrollo web"
-- [ ] Acotar el title del homepage a marca + término local primario
-- [ ] Dejar los términos específicos de servicio solo en las páginas de servicio
+- [x] Homepage title compite con `/desarrollo-web` por "desarrollo web"
+- [x] Acotar el title del homepage a marca + término local primario
+- [x] Dejar los términos específicos de servicio solo en las páginas de servicio
 
 ---
 
 ## Prioridad 3 — Medio
 
 ### 11. Fechas de blog con `<time datetime>`
-- [ ] `src/components/blog/BlogEntry.astro:78` — envolver la fecha en `<time datetime={isoDate}>{date}</time>` (la función `toISODate` ya existe, solo se usa en el schema)
+- [x] `src/components/blog/BlogEntry.astro:78` — envolver la fecha en `<time datetime={isoDate}>{date}</time>` (la función `toISODate` ya existe, solo se usa en el schema)
 
 ### 12. Corregir posicionamiento del index del blog
-- [ ] `src/pages/blog.astro:23-25` — reescribir title/description/keywords alrededor de **"Soluciones Digitales"** (hoy vende fotografía, video y drones como foco actual)
+- [x] `src/pages/blog.astro:23-25` — reescribir title/description/keywords alrededor de **"Soluciones Digitales"** (hoy vende fotografía, video y drones como foco actual)
 - Nota: los posts antiguos de foto/video/dron se conservan como contenido histórico, pero el index no debe presentarlos como servicios actuales
 
 ### 13. Schema faltante
-- [ ] Agregar `BreadcrumbList` en subpáginas
-- [ ] Agregar schema `Service` en `/desarrollo-web` y `/tarjetas-nfc`
-- [ ] Agregar `ItemList` en `/blog`
-- [ ] Agregar `PostalAddress` (localidad/región/país) al `Organization` (sin calle, no hay ubicación física)
+- [x] Agregar `BreadcrumbList` en subpáginas
+- [x] Agregar schema `Service` en `/desarrollo-web` y `/tarjetas-nfc`
+- [x] Agregar `ItemList` en `/blog`
+- [x] Agregar `PostalAddress` (localidad/región/país) al `Organization` (sin calle, no hay ubicación física)
 
 ### 14. Señales locales en páginas de servicio
-- [ ] `/tarjetas-nfc` — agregar "Los Mochis, Sinaloa" en texto visible (hoy solo en meta)
-- [ ] `/desarrollo-web` — reforzar mención local (hoy aparece una vez, dentro de un FAQ)
+- [x] `/tarjetas-nfc` — agregar "Los Mochis, Sinaloa" en texto visible (hoy solo en meta)
+- [x] `/desarrollo-web` — reforzar mención local (hoy aparece una vez, dentro de un FAQ)
 
 ### 15. Autores / E-E-A-T
 - [ ] Agregar bloque de bio de autor en los posts (`BlogPosting.author` = "Manuel Samaniego" sin página de autor)
@@ -148,8 +148,8 @@ Pendientes clave:
   - "agencia de desarrollo web Los Mochis"
   - "desarrollo web para negocios en Sinaloa"
   - "tarjetas NFC para negocios México"
-- [ ] Agregar `<lastmod>` al sitemap (opcional, Google lo usa poco pero ayuda)
-- [ ] Corregir orden de columnas hero en mobile (H1 antes que la imagen)
+- [x] Agregar `<lastmod>` al sitemap (opcional, Google lo usa poco pero ayuda)
+- [x] Corregir orden de columnas hero en mobile (H1 antes que la imagen)
 - [ ] Convertir logos de clientes en testimonios con nombre, industria y resultado
 - [ ] Evaluar página `/casos-de-exito` con 2–3 casos estructurados
 - [ ] `/sobre-nosotros`: agregar fotos reales del equipo (hoy usa monogramas de iniciales; los perfiles de LinkedIn ya están enlazados)

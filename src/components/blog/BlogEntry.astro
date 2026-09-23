@@ -1,6 +1,8 @@
 ---
 import Footer from "../shared/Footer.astro";
 import Nav from "../shared/Nav.astro";
+import BlogServiceCta from "./BlogServiceCta.astro";
+import RelatedPosts from "./RelatedPosts.astro";
 import type BlogContent from "../../interfaces/BlogContentList";
 import SubPageLayout from "../../layouts/SubPageLayout.astro";
 import { Image, getImage } from "astro:assets";
@@ -76,6 +78,9 @@ const blogPostingSchema = JSON.stringify({
   ogImageHeight={ imageHeight }
   ogImageAlt={ 'Imagen sobre: ' + title }
   publishedTime={ isoDate }
+  breadcrumbName={ title }
+  breadcrumbParentLabel="Blog"
+  breadcrumbParentHref="/blog"
 >
   <script type="application/ld+json" slot="head" set:html={blogPostingSchema} />
   <Nav />
@@ -83,10 +88,10 @@ const blogPostingSchema = JSON.stringify({
   <main class="w-100 d-flex flex-column justify-content-center align-items-center pb-11">
     <div class="blog-container">
       <h1 class="m-0">{ title }</h1>
-      <p class="text-gray-700 ms-1">Por <span>{ createdBy }</span> - <span>{ skill }</span> en <span class="lab-font-color">LABSTUDIO</span> • <span>{ date }</span></p>
+      <p class="text-gray-700 ms-1">Por <span>{ createdBy }</span> - <span>{ skill }</span> en <span class="lab-font-color">LABSTUDIO</span> • <time datetime={ isoDate }>{ date }</time></p>
 
       {
-        blogImage && (<Image src={blogImage} alt="linea" class="w-100 h-auto shadow rounded mt-4 mb-6" />)
+        blogImage && (<Image src={blogImage} alt={ 'Imagen sobre: ' + title } class="w-100 h-auto shadow rounded mt-4 mb-6" />)
       }
 
       <div class="w-100 d-flex align-items-center flex-column pt-6">
@@ -107,6 +112,9 @@ const blogPostingSchema = JSON.stringify({
         }
 
       </div>
+
+      <BlogServiceCta />
+      <RelatedPosts currentTitle={ title } />
 
     </div>
   </main>
