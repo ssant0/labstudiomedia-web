@@ -47,6 +47,18 @@ const schemaJson = JSON.stringify({
     "acceptedAnswer": { "@type": "Answer", "text": a },
   })),
 });
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Desarrollo Web",
+  serviceType: "Desarrollo de sitios web",
+  url: "https://labstudiomedia.com/desarrollo-web",
+  provider: { "@id": "https://labstudiomedia.com/#organization" },
+  areaServed: { "@type": "Country", name: "México" },
+  description:
+    "Desarrollo de sitios web, landing pages y tiendas en línea para negocios.",
+});
 ---
 
 <SubPageLayout
@@ -55,8 +67,10 @@ const schemaJson = JSON.stringify({
   description="Desarrollamos soluciones web efectivas para tu negocio. Sitios web estáticos y aplicaciones web dinámicas. ¡Mejora tu presencia en línea!"
   ogDescription="Impulsa tu negocio en línea con nuestro expertise en desarrollo web. Soluciones personalizadas para sitios web y aplicaciones web."
   keywords="desarrollo web Los Mochis, diseño web profesional, agencia de desarrollo web Sinaloa, sitios web para empresas, tiendas en línea, aplicaciones web, desarrollo web México, SEO técnico, sitios web responsivos"
+  breadcrumbName="Desarrollo Web"
 >
   <script type="application/ld+json" slot="head" set:html={schemaJson} />
+  <script type="application/ld+json" slot="head" set:html={serviceSchema} />
   <Nav />
 
   <!-- Hero section -->

@@ -16,6 +16,9 @@ interface Props {
   ogImageAlt?: string;
   publishedTime?: string;
   robots?: string;
+  breadcrumbName?: string;
+  breadcrumbParentLabel?: string;
+  breadcrumbParentHref?: string;
 }
 
 const {
@@ -31,9 +34,47 @@ const {
   ogImageAlt = ogTitle,
   publishedTime,
   robots = 'index',
+  breadcrumbName: breadcrumbNameProp,
+  breadcrumbParentLabel,
+  breadcrumbParentHref,
 } = Astro.props;
 
 const canonicalUrl = `https://labstudiomedia.com${Astro.url.pathname}`;
+
+const breadcrumbName =
+  breadcrumbNameProp ??
+  title.replace(/^LABSTUDIO\s*\|\s*/i, '').split(/[—|]/)[0].trim();
+
+const breadcrumbItems: Record<string, unknown>[] = [
+  {
+    "@type": "ListItem",
+    position: 1,
+    name: "Inicio",
+    item: "https://labstudiomedia.com/",
+  },
+];
+
+if (breadcrumbParentLabel && breadcrumbParentHref) {
+  breadcrumbItems.push({
+    "@type": "ListItem",
+    position: breadcrumbItems.length + 1,
+    name: breadcrumbParentLabel,
+    item: `https://labstudiomedia.com${breadcrumbParentHref}`,
+  });
+}
+
+breadcrumbItems.push({
+  "@type": "ListItem",
+  position: breadcrumbItems.length + 1,
+  name: breadcrumbName,
+  item: canonicalUrl,
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: breadcrumbItems,
+});
 ---
 
 <!doctype html>
@@ -82,6 +123,7 @@ const canonicalUrl = `https://labstudiomedia.com${Astro.url.pathname}`;
     <link rel="icon" href="/favicon/96x96.png" sizes="96x96">
     <link rel="icon" href="/favicon/144x144.png" sizes="144x144">
     <meta name="generator" content={Astro.generator} />
+    <script type="application/ld+json" set:html={breadcrumbSchema} />
     <slot name="head" />
     <link rel="stylesheet" href="/styles/theme.bundle.css" />
     <link rel="stylesheet" href="/styles/libs.bundle.css" />

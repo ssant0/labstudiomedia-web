@@ -76,6 +76,9 @@ const blogPostingSchema = JSON.stringify({
   ogImageHeight={ imageHeight }
   ogImageAlt={ 'Imagen sobre: ' + title }
   publishedTime={ isoDate }
+  breadcrumbName={ title }
+  breadcrumbParentLabel="Blog"
+  breadcrumbParentHref="/blog"
 >
   <script type="application/ld+json" slot="head" set:html={blogPostingSchema} />
   <Nav />

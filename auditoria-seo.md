@@ -103,10 +103,10 @@ Pendientes clave:
 - Nota: los posts antiguos de foto/video/dron se conservan como contenido histórico, pero el index no debe presentarlos como servicios actuales
 
 ### 13. Schema faltante
-- [ ] Agregar `BreadcrumbList` en subpáginas
-- [ ] Agregar schema `Service` en `/desarrollo-web` y `/tarjetas-nfc`
-- [ ] Agregar `ItemList` en `/blog`
-- [ ] Agregar `PostalAddress` (localidad/región/país) al `Organization` (sin calle, no hay ubicación física)
+- [x] Agregar `BreadcrumbList` en subpáginas
+- [x] Agregar schema `Service` en `/desarrollo-web` y `/tarjetas-nfc`
+- [x] Agregar `ItemList` en `/blog`
+- [x] Agregar `PostalAddress` (localidad/región/país) al `Organization` (sin calle, no hay ubicación física)
 
 ### 14. Señales locales en páginas de servicio
 - [ ] `/tarjetas-nfc` — agregar "Los Mochis, Sinaloa" en texto visible (hoy solo en meta)

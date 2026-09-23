@@ -59,6 +59,18 @@ const schemaJson = JSON.stringify({
     "acceptedAnswer": { "@type": "Answer", "text": a },
   })),
 });
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Tarjetas NFC Link It",
+  serviceType: "Tarjetas de presentación NFC",
+  url: "https://labstudiomedia.com/tarjetas-nfc",
+  provider: { "@id": "https://labstudiomedia.com/#organization" },
+  areaServed: { "@type": "Country", name: "México" },
+  description:
+    "Tarjetas de presentación NFC personalizadas que comparten el contacto completo con un solo toque.",
+});
 ---
 
 <SubPageLayout
@@ -67,8 +79,10 @@ const schemaJson = JSON.stringify({
   description="Tarjetas de presentación NFC Link It de PVC rígido personalizadas para empresas y freelancers. Transfiere tu contacto completo con un solo toque. Diseño a tu imagen corporativa."
   ogDescription="Moderniza la presentación de tu equipo con tarjetas NFC Link It. Diseño corporativo, control centralizado y tecnología de vanguardia. LabStudio Media, Los Mochis."
   keywords="Link It, tarjetas NFC Link It, Link It México, tarjetas NFC, tarjetas de presentación NFC, tarjetas inteligentes empresariales, NFC México, tarjetas contactless, vCard NFC, tarjetas digitales, presentación empresarial, NFC Los Mochis, Sinaloa, tarjetas PVC NFC, tarjetas corporativas, networking digital"
+  breadcrumbName="Tarjetas NFC"
 >
   <script type="application/ld+json" slot="head" set:html={schemaJson} />
+  <script type="application/ld+json" slot="head" set:html={serviceSchema} />
   <Nav />
 
   <!-- ===== HERO ===== -->
