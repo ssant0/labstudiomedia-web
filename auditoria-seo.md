@@ -109,8 +109,8 @@ Pendientes clave:
 - [x] Agregar `PostalAddress` (localidad/región/país) al `Organization` (sin calle, no hay ubicación física)
 
 ### 14. Señales locales en páginas de servicio
-- [ ] `/tarjetas-nfc` — agregar "Los Mochis, Sinaloa" en texto visible (hoy solo en meta)
-- [ ] `/desarrollo-web` — reforzar mención local (hoy aparece una vez, dentro de un FAQ)
+- [x] `/tarjetas-nfc` — agregar "Los Mochis, Sinaloa" en texto visible (hoy solo en meta)
+- [x] `/desarrollo-web` — reforzar mención local (hoy aparece una vez, dentro de un FAQ)
 
 ### 15. Autores / E-E-A-T
 - [ ] Agregar bloque de bio de autor en los posts (`BlogPosting.author` = "Manuel Samaniego" sin página de autor)
