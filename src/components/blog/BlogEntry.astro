@@ -1,6 +1,8 @@
 ---
 import Footer from "../shared/Footer.astro";
 import Nav from "../shared/Nav.astro";
+import BlogServiceCta from "./BlogServiceCta.astro";
+import RelatedPosts from "./RelatedPosts.astro";
 import type BlogContent from "../../interfaces/BlogContentList";
 import SubPageLayout from "../../layouts/SubPageLayout.astro";
 import { Image, getImage } from "astro:assets";
@@ -110,6 +112,9 @@ const blogPostingSchema = JSON.stringify({
         }
 
       </div>
+
+      <BlogServiceCta />
+      <RelatedPosts currentTitle={ title } />
 
     </div>
   </main>

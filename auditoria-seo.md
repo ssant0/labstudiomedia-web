@@ -56,9 +56,9 @@ Pendientes clave:
 
 ### 5. Expandir contenido del blog y crear enlaces internos
 - [ ] Expandir los 10 posts a **1,200–1,500 palabras** (hoy ~520) con ejemplos originales
-- [ ] Agregar 2–3 enlaces internos contextuales por post hacia `/desarrollo-web` y `/tarjetas-nfc`
-- [ ] Agregar bloque CTA de servicios al final de cada post
-- [ ] Agregar módulo de "posts relacionados"
+- [x] Agregar 2–3 enlaces internos contextuales por post hacia `/desarrollo-web` y `/tarjetas-nfc`
+- [x] Agregar bloque CTA de servicios al final de cada post
+- [x] Agregar módulo de "posts relacionados"
 - Evidencia: los 10 archivos en `src/pages/blog/*.astro` tienen `href=` count = **0**
 - Impacto: **Alto** — sin clustering ni flujo de autoridad hacia páginas de servicio
 
