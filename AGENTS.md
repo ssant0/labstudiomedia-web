@@ -27,7 +27,7 @@ Static marketing site for LabStudio Media, a digital solutions agency (Los Mochi
 - Conditional rendering via `<Show show={bool}>`; CTAs via `<CustomBtn isPrimary href blank extraClasses aos>`.
 - Bootstrap utilities; theme extends spacing to scale 12 (`.pt-10`, `.pt-12`, `.mb-8` are valid). Custom classes prefixed `.lab-*` / `.labs-*`.
 - Brand colors in `public/styles/shared.css`: purple `#633fb9`, accent `#9554fd`; use `text-labs-gradient` / `labs-btn-gradient`.
-- Commits follow Conventional Commits (`feat:`, `fix:`, `docs:`, `update:`, `chore:`); branch from `main` as `feat/<slug>`.
+- Commits follow Conventional Commits (`feat:`, `fix:`, `docs:`, `update:`, `chore:`), with messages written in Spanish. Always branch from `develop` using a typed prefix (`feat/<slug>`, `fix/<slug>`, etc.); branches merge back into `develop`.
 
 ## Content constraints (easy to get wrong)
 
