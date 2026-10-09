@@ -2,11 +2,9 @@ import type { ImageMetadata } from "astro";
 
 import Blog1Image from "../img/blog/1.webp";
 import Blog2Image from "../img/blog/2.webp";
-import Blog3Image from "../img/blog/3.webp";
 import Blog4Image from "../img/blog/4.webp";
 import Blog5Image from "../img/blog/5-1.webp";
 import Blog6Image from "../img/blog/6.webp";
-import Blog7Image from "../img/blog/7.webp";
 import Blog8Image from "../img/blog/8.webp";
 import Blog9Image from "../img/blog/9.webp";
 import Blog10Image from "../img/blog/10.webp";
@@ -56,12 +54,6 @@ export const blogPosts: BlogPostMeta[] = [
     image: Blog2Image,
   },
   {
-    title: "La Importancia de la Fotografía Profesional para tu Negocio",
-    description:
-      "Descubre cómo la fotografía profesional puede mejorar la imagen de tu negocio, atraer más clientes y aumentar tus ventas. Aprende sobre los beneficios y la importancia de invertir en fotos de alta calidad.",
-    image: Blog3Image,
-  },
-  {
     title: "Elige el Dron Perfecto para tus Proyectos",
     description:
       "Descubre cómo elegir el dron perfecto para tus proyectos de grabación. Exploramos modelos como el DJI Mini 4, Air 3 y Mavic 3, con sus precios, funciones y características técnicas.",
@@ -78,12 +70,6 @@ export const blogPosts: BlogPostMeta[] = [
     description:
       "Descubre los 10 errores más comunes en diseño web y aprende cómo evitarlos para mejorar la experiencia de usuario y el rendimiento de tu sitio.",
     image: Blog6Image,
-  },
-  {
-    title: "Post-producción en Fotografía de Productos: Retoca como un Profesional",
-    description:
-      "Descubre consejos y técnicas de edición para mejorar la calidad de las fotos de productos en postproducción. Aprende a retocar imágenes como un profesional y lleva tus fotografías al siguiente nivel.",
-    image: Blog7Image,
   },
   {
     title: "Drones para Fotografía de Eventos: Capturando Momentos Únicos desde Nuevas Perspectivas",
