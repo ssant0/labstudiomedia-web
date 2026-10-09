@@ -1,4 +1,43 @@
 
+/*
+ * Font overrides.
+ * theme.bundle.css is precompiled and declares @font-face without
+ * font-display (causing FOIT) and with legacy .woff/ttf/svg fallbacks.
+ * This file loads after it, so these declarations win.
+ * Only .woff2 is served for HK Grotesk Pro (3 weights in use).
+ */
+@font-face {
+  font-family: HKGroteskPro;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: HKGroteskPro;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: HKGroteskPro;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/HK%20Grotesk%20Pro/HKGroteskPro-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Feather;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Feather/Feather.woff?sdxovp") format("woff");
+}
+
 :root {
   --purple-gray: #898197; 
   /* #716d79 */
