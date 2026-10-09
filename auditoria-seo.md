@@ -70,9 +70,12 @@ Pendientes clave:
 - Impacto: Medio — brecha de E-E-A-T para negocio local
 
 ### 7. Performance de fuentes
-- [ ] Agregar `font-display: swap` en las declaraciones `@font-face` **en el origen** (no editar `theme.bundle.css` a mano)
-- [ ] Reducir a 2–3 pesos (Regular, Bold, opcional Medium)
-- [ ] Eliminar archivos `.otf` y `.woff` de `public/fonts/HK Grotesk Pro/` — servir solo `.woff2`
+- [x] Agregar `font-display: swap` en las declaraciones `@font-face` **en el origen** (no editar `theme.bundle.css` a mano)
+  - Implementado re-declarando `@font-face` en `public/styles/shared.css` (carga último → gana por cascade sobre el bundle precompilado). No se tocó `theme.bundle.css`.
+- [x] Reducir a 2–3 pesos (Regular, Bold, opcional Medium) — quedan 3 en uso: 400 (Regular), 600 (Medium), 700 (Bold)
+- [x] Eliminar archivos `.otf` y `.woff` de `public/fonts/HK Grotesk Pro/` — servir solo `.woff2`
+  - `public/fonts/` pasó de 3.6M (58 archivos) a 200K (4 archivos): 3 `.woff2` de HK Grotesk Pro + `Feather.woff`. El override de `shared.css` ya no referencia `.woff`/`.ttf`/`.svg`.
+  - Nota: `theme.bundle.css` conserva referencias colgantes a `.woff`/`.ttf`/`.svg`, pero quedan inactivas por el override. Si algún día se regenera el bundle, corregirlo en el origen.
 - Evidencia: 54 archivos de fuente (18 pesos) desplegados; solo se referencian 3 pesos (400/600/700)
 - Impacto: **Alto** — riesgo de FOIT en el LCP
 
