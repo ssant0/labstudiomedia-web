@@ -116,7 +116,10 @@ Pendientes clave:
 - [x] `/desarrollo-web` — reforzar mención local (hoy aparece una vez, dentro de un FAQ)
 
 ### 15. Autores / E-E-A-T
-- [ ] Agregar bloque de bio de autor en los posts (`BlogPosting.author` = "Manuel Samaniego" sin página de autor)
+- [x] Agregar bloque de bio de autor en los posts (`BlogPosting.author` = "Manuel Samaniego" sin página de autor)
+  - Nuevos `src/data/authors.ts` (perfiles de autores) y `src/components/blog/AuthorBio.astro`, renderizado al final de cada post.
+  - `BlogPosting.author` ahora incluye `url` (`/sobre-nosotros`), `jobTitle` y `sameAs` (LinkedIn); el byline del post enlaza el nombre a `/sobre-nosotros`.
+  - Se eliminó al autor **Guy Miranda** (ya no labora en la agencia) y sus 2 posts: "La Importancia de la Fotografía Profesional para tu Negocio" y "Post-producción en Fotografía de Productos: Retoca como un Profesional", con 301 a `/blog` en `public/_redirects`. Quedan 8 posts (Manuel Samaniego e Ivan Franco).
 
 ---
 
