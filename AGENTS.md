@@ -32,7 +32,7 @@ Static marketing site for LabStudio Media, a digital solutions agency (Los Mochi
 ## Content constraints (easy to get wrong)
 
 - Positioning is **"Soluciones Digitales"**, not "marketing digital".
-- The agency does **not** offer photography or video. Old blog posts about photo/video/drones stay published as historical content, but never present them as current services on `index`, layouts, `desarrollo-web`, or `tarjetas-nfc`.
+- The agency does **not** offer photography or video. Old blog posts about drones stay published as historical content (never present them as current services on `index`, layouts, `desarrollo-web`, or `tarjetas-nfc`); the photography posts by former author Guy Miranda were removed.
 - NFC copy: **LabStudio** configures cards, never the client. Write "Nosotros configuramos tu tarjeta…", not imperative "Configura tu tarjeta".
 
 ## Nav, Footer, integrations
